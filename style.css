@@ -1,0 +1,148 @@
+:root {
+    --bg1: #0b1020;
+    --bg2: #060913;
+    --border: rgba(255, 255, 255, 0.14);
+    --text: #e9eefc;
+    --muted: #aab6e6;
+    --btn: rgba(255, 255, 255, 0.10);
+    --btn2: rgba(255, 255, 255, 0.16);
+    --shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial
+}
+
+body {
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background:
+        radial-gradient(1200px 700px at 70% 20%, #1b2a66 0%, transparent 55%),
+        radial-gradient(900px 600px at 20% 70%, #3b1b66 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    color: var(--text);
+}
+
+.app {
+    width: min(420px, 96vw);
+}
+
+.calc {
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.top {
+    padding: 16px 16px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.top p {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.3;
+}
+
+.screen {
+    padding: 16px;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.history {
+    min-height: 18px;
+    font-size: 12px;
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.display {
+    margin-top: 8px;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.key {
+    border: none;
+    border-radius: 14px;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    background: var(--btn);
+    cursor: pointer;
+    transition: transform .06s ease, background .12s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.key:active {
+    transform: scale(0.98);
+}
+
+.key:hover {
+    background: var(--btn2);
+}
+
+.key.op {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.key.ghost {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--muted);
+}
+
+.key.wide {
+    grid-column: span 2;
+}
+
+.key.equals {
+    background: linear-gradient(180deg, #ffffff, #dbe4ff);
+    color: #0b1020;
+}
+
+/* ✅ Developer footer */
+.dev {
+    text-align: center;
+    padding: 12px 10px 0;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.dev .name {
+    color: var(--text);
+    font-weight: 800;
+}
